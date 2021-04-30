@@ -24,7 +24,7 @@ require("dotenv").config();
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(function () {
-  server.listen(process.env.PORT || 4000, function () {
+  server.listen(process.env.PORT || 4000||0.00.000.000, function () {
     console.log("Server is listening !");
 
     var glutenFree = Diets.create({ name: "gluten free" });
