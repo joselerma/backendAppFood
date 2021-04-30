@@ -20,11 +20,12 @@
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
 const { Recipe, Diets } = require("./src/db.js");
+require("dotenv").config();
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(function () {
-  server.listen(4000, function () {
-    console.log("Server is listening on port 4000!");
+  server.listen(process.env.PORT || 4000, function () {
+    console.log("Server is listening !");
 
     var glutenFree = Diets.create({ name: "gluten free" });
 
